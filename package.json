@@ -1,7 +1,7 @@
 {
   "name": "odin-restaurant",
   "version": "1.0.0",
-  "description": "odin restaurant page",
+  "description": "restaurant page",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/kojokwakye/odin-restaurant.git"
   },
-  "author": "",
+  "author": "augustus",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/kojokwakye/odin-restaurant/issues"
