@@ -1,12 +1,18 @@
-import "./menu.js"
-import "./about.js"   
-
 const homebtn = document.getElementById("homebtn");
-homebtn.addEventListener("click", () => {
-  console.log("clicked on home");
+const tabs = document.querySelectorAll(".tablinks");
+const content = document.querySelectorAll(".content");
+const active = document.querySelector(".active");
+
+tabs.forEach((tab, index) => {
+  tab.addEventListener("click", (event) => {
+    tabs.forEach((tab) => tab.classList.remove("active"));
+    event.target.classList.add("active");
+    content.forEach((para) => para.classList.remove("visible"));
+    content[index].classList.add("visible");
+  });
 });
 
-function homepage() {
+function contentpage() {
   const header = document.createElement("header");
   const headernode = document.createTextNode("THE BEEF");
   header.appendChild(headernode);
@@ -22,4 +28,4 @@ function homepage() {
   document.getElementById("homebtn").click();
 }
 
-homepage();
+contentpage();
