@@ -1,5 +1,5 @@
-import "./styles.css";
-import "./home.js";
+import "./css/styles.css";
+// import "./home.js";
 import { homepage } from "./home.js";
 import { menupage } from "./menu.js";
 import { aboutpage } from "./about.js";
@@ -7,6 +7,14 @@ import { aboutpage } from "./about.js";
 const homebtn = document.getElementById("homebtn");
 const menubtn = document.getElementById("menubtn");
 const aboutbtn = document.getElementById("aboutbtn");
+const content = document.getElementById("content");
+
+export function refreshpage() {
+//   const content = document.getElementById("content");
+  content.innerHTML = "";
+}
+
+homepage();
 
 homebtn.addEventListener("click", () => {
   homepage();
