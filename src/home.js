@@ -1,9 +1,12 @@
-const homebtn = document.getElementById("home");
+import "./menu.js"
+import "./about.js"   
+
+const homebtn = document.getElementById("homebtn");
 homebtn.addEventListener("click", () => {
-  console.log("clickedon home");
+  console.log("clicked on home");
 });
 
-function pageLoad() {
+function homepage() {
   const header = document.createElement("header");
   const headernode = document.createTextNode("THE BEEF");
   header.appendChild(headernode);
@@ -16,7 +19,7 @@ function pageLoad() {
   element.appendChild(header);
   element.appendChild(welcome);
 
-  document.getElementById("home").click();
+  document.getElementById("homebtn").click();
 }
 
-pageLoad();
+homepage();
