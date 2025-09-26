@@ -2,17 +2,15 @@ import { refreshpage } from "./index.js";
 
 export function menupage() {
   refreshpage();
-  const header = document.createElement("header");
-  const headernode = document.createTextNode("THE BEEF");
-  const element = document.getElementById("content");
+  const content = document.getElementById("content");
 
-  header.appendChild(headernode);
-  element.appendChild(header);
-
-  const breakfast = document.createElement("header");
-  const breakfasttitle = document.createTextNode("MENU LIST");
-  breakfast.appendChild(breakfasttitle);
-  element.appendChild(breakfast);
+  const breakfast = document.createElement("div");
+  breakfast.classList.add("menudiv");
+  const breakfasttitle = document.createElement("p");
+  breakfasttitle.textContent = "Menu list";
+  breakfasttitle.classList.add("menu-list");
+  content.appendChild(breakfasttitle);
+  content.appendChild(breakfast);
 
   function createFood(text, description, price) {
     const food = document.createElement("div");
@@ -20,17 +18,20 @@ export function menupage() {
 
     const foodName = document.createElement("p");
     foodName.textContent = text;
+    foodName.classList.add("foodName");
 
-    const foodPrice = document.createElement("p");
+    const foodPrice = document.createElement("span");
     foodPrice.textContent = price;
 
     const foodDescription = document.createElement("p");
     foodDescription.textContent = description;
+    foodDescription.classList.add("foodDecription");
 
     // append elements to the food div
     food.appendChild(foodName);
-    food.appendChild(foodPrice);
     food.appendChild(foodDescription);
+    food.appendChild(foodPrice);
+
     return food;
   }
 
@@ -54,6 +55,11 @@ export function menupage() {
       "Hamburger",
       "⅓ lb beef patty grilled with mustard, ketchup, onion, lettuce, tomato, and pickle on a delicious bun",
       "230gh"
+    ),
+    createFood(
+      "Italian Beef Sandwich",
+      "Classic Italian beef sandwich, dipped in homemade au jus, and served on classic French bread",
+      "100gh"
     ),
     createFood(
       "Cheeseburger",
@@ -85,11 +91,7 @@ export function menupage() {
       "Grilled chicken breast topped with tangy BBQ sauce, lettuce, and pickles on a soft bun",
       "160gh"
     ),
-    createFood(
-      "Fish Sandwich",
-      "Breaded white fish fillet fried to perfection, served with tartar sauce, lettuce, and pickles",
-      "150gh"
-    ),
+
     createFood(
       "Pulled Pork Sandwich",
       "Slow-cooked pulled pork smothered in BBQ sauce, topped with coleslaw on a fresh bun",
