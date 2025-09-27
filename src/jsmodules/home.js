@@ -3,19 +3,25 @@ import { refreshpage } from "./index.js";
 // import bread from "/src/img/bread.jpg";
 // import pizza from "/src/img/pizza.jpg";
 // import chips from "/src/img/chips.jpg";
-import pngwing from "/src/img/pngburger.png"
+import pngwing from "/src/img/pngburger.png";
+import pngburger from "/src/img/burger.png"
 export function homepage() {
   refreshpage();
+  const content = document.getElementById("content");
+
   const header = document.createElement("p");
   header.textContent = "THE BEEF";
   header.classList.add("homeheader");
 
-  const element = document.getElementById("content");
-  element.appendChild(header);
+  const mainpagediv = document.createElement("div");
+  mainpagediv.classList.add("mainpagediv");
+  content.appendChild(mainpagediv);
+
+  mainpagediv.appendChild(header);
 
   const imgsection = document.createElement("div");
   imgsection.classList.add("imgdiv");
-  element.appendChild(imgsection);
+  mainpagediv.appendChild(imgsection);
 
   const createImg = (src, className) => {
     const img = document.createElement("img");
@@ -23,7 +29,7 @@ export function homepage() {
     img.classList.add(className);
     return img;
   };
-  const images = [pngwing];
+  const images = [pngwing, pngburger];
 
   images.forEach((image) => {
     const img = createImg(image, "mainpageImg");

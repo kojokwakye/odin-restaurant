@@ -217,4 +217,13 @@ export function menupage() {
   menulist.forEach((food) => {
     breakfast.appendChild(food);
   });
+
+  // main course
+  const maincourse = document.createElement("div");
+  maincourse.classList.add("maincourse");
+  const maincoursetititle = document.createElement("p");
+  maincourse.classList.add("main-course");
+  maincoursetititle.textContent = "Main Course";
+  content.appendChild(maincoursetititle);
+  content.appendChild(maincourse);
 }

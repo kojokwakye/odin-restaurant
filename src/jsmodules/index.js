@@ -1,5 +1,4 @@
 import "./css/styles.css";
-// import "./home.js";
 import { homepage } from "./home.js";
 import { menupage } from "./menu.js";
 import { aboutpage } from "./about.js";
@@ -10,7 +9,6 @@ const aboutbtn = document.getElementById("aboutbtn");
 const content = document.getElementById("content");
 
 export function refreshpage() {
-//   const content = document.getElementById("content");
   content.innerHTML = "";
 }
 
