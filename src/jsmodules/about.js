@@ -2,25 +2,36 @@ import { refreshpage } from "./index.js";
 
 export function aboutpage() {
   refreshpage();
-  const header = document.createElement("header");
-  const headernode = document.createTextNode("about the beef");
-  header.appendChild(headernode);
-  const element = document.getElementById("content");
-  element.appendChild(header);
+  const content = document.getElementById("content");
+
+  const aboutpage = document.createElement("div");
+  aboutpage.classList.add("about-page");
+  const aboutpara = document.createElement("p");
+  aboutpara.textContent = "about the beef";
+  aboutpara.classList.add("header");
 
   const bio = document.createElement("p");
   bio.textContent = "the beef was established in 1980 by Robert Dufresne";
-  bio.classList.add("bio-title");
-  element.appendChild(bio);
+  bio.classList.add("aboutbio");
+
+  aboutpage.appendChild(aboutpara);
+  aboutpage.appendChild(bio);
 
   const locationdiv = document.createElement("div");
-
+  locationdiv.classList.add("locationdiv");
   const locationtitle = document.createElement("p");
   locationtitle.textContent = "location";
   locationtitle.classList.add("header");
-
   const location = document.createElement("p");
-  location.textContent = "accra, ghana";
+  location.textContent = "Accra, Ghana";
+
+  const locationgps = document.createElement("p");
+  locationgps.textContent = "-51.58297, -178.02765";
+
+  aboutpage.appendChild(locationdiv);
+  locationdiv.appendChild(locationtitle);
+  locationdiv.appendChild(location);
+  locationdiv.appendChild(locationgps);
 
   const contacttitle = document.createElement("p");
   contacttitle.textContent = "contact";
@@ -34,7 +45,7 @@ export function aboutpage() {
 
   const socialMedia = document.createElement("p");
   socialMedia.textContent = "follow us";
-  socialMedia.classList.add("header");
+  socialMedia.classList.add("social_links");
 
   const socialLinks = document.createElement("a");
   socialLinks.textContent = "instagram";
@@ -43,15 +54,15 @@ export function aboutpage() {
   warningtxt.textContent =
     "The kitchen closes at 10.00 PM Sunday to Thursday and 10:30 PM Friday and Saturday";
 
-  element.appendChild(locationdiv);
+  content.appendChild(aboutpage);
   [
-    locationtitle,
-    location,
-    contacttitle,
+    // aboutpara,
+    // locationtitle,
+    // contacttitle,
     emailAdd,
     phoneNumber,
     socialMedia,
     socialLinks,
     warningtxt,
-  ].forEach((element) => locationdiv.appendChild(element));
+  ].forEach((content) => aboutpage.appendChild(content));
 }
