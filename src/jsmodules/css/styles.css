@@ -79,7 +79,7 @@ img.mainpageImg {
 
 .food {
   padding: 1em;
-  border-bottom: 1px solid rgb(184, 175, 175);
+  border-bottom: 1px solid rgba(184, 175, 175, 0.678);
 }
 
 .food:last-child {
@@ -87,8 +87,10 @@ img.mainpageImg {
 }
 
 .food:hover {
-  background-color: #f6a05c21;
   cursor: pointer;
+  transition: all 0.2s ease-out;
+  box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
+  border: 0.5px solid #ccccccc4;
 }
 
 .breakfast,
@@ -116,13 +118,6 @@ img.mainpageImg {
   margin-top: 100px;
 }
 
-/* .card {
-  outline: 1px solid #c6c1c19b;
-  text-align: center;
-  border-radius: 4px;
-  padding: 32px 24px;
-  margin: 12px;
-} */
 
 .card {
   display: block;
@@ -142,7 +137,6 @@ img.mainpageImg {
     border: 1px solid #cccccc;
     background-color: white;
   }
-
 }
 
 /* Media Queries */
@@ -169,10 +163,10 @@ img.mainpageImg {
     width: 90px;
   }
 
-  .breakfast,
+  /* .breakfast,
   .main-course {
     border-right: none;
-  }
+  } */
 }
 
 @media (max-width: 768px) {
