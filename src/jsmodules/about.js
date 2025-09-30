@@ -1,68 +1,71 @@
 import { refreshpage } from "./index.js";
 
+function createElementWithClass(tag, className, textContent) {
+  const element = document.createElement(tag);
+  if (className) element.classList.add(className);
+  if (textContent) element.textContent = textContent;
+  return element;
+}
+
 export function aboutpage() {
   refreshpage();
   const content = document.getElementById("content");
 
-  const aboutpage = document.createElement("div");
-  aboutpage.classList.add("about-page");
-  const aboutpara = document.createElement("p");
-  aboutpara.textContent = "about the beef";
-  aboutpara.classList.add("header");
+  const aboutpage = createElementWithClass("div", "about-page");
 
-  const bio = document.createElement("p");
-  bio.textContent = "the beef was established in 1980 by Robert Dufresne";
-  bio.classList.add("aboutbio");
+  const aboutsecdiv = createElementWithClass("div", "card");
+  const aboutpara = createElementWithClass("p", "header", "about the beef");
+  const bio = createElementWithClass(
+    "p",
+    "aboutbio",
+    "The Beef was founded in 1980 by Robert Dufresne, with a simple goal: to serve delicious, high-quality fast food. Since then, it has become a local favorite, known for its mouth-watering burgers and friendly service."
+  );
 
-  aboutpage.appendChild(aboutpara);
-  aboutpage.appendChild(bio);
+  aboutsecdiv.append(aboutpara, bio);
+  aboutpage.appendChild(aboutsecdiv);
 
-  const locationdiv = document.createElement("div");
-  locationdiv.classList.add("locationdiv");
-  const locationtitle = document.createElement("p");
-  locationtitle.textContent = "location";
-  locationtitle.classList.add("header");
-  const location = document.createElement("p");
-  location.textContent = "Accra, Ghana";
+  const locationdiv = createElementWithClass("div", "card");
+  const locationtitle = createElementWithClass("p", "header", "location");
+  const location = createElementWithClass("p", null, "Accra, Ghana");
+  const locationgps = createElementWithClass(
+    "p",
+    null,
+    "-51.58297, -178.02765"
+  );
 
-  const locationgps = document.createElement("p");
-  locationgps.textContent = "-51.58297, -178.02765";
-
+  locationdiv.append(locationtitle, location, locationgps);
   aboutpage.appendChild(locationdiv);
-  locationdiv.appendChild(locationtitle);
-  locationdiv.appendChild(location);
-  locationdiv.appendChild(locationgps);
 
-  const contacttitle = document.createElement("p");
-  contacttitle.textContent = "contact";
-  contacttitle.classList.add("header");
+  const contactdiv = createElementWithClass("div", "card");
+  const contacttitle = createElementWithClass("p", "header", "contact");
+  const phoneNumber = createElementWithClass(
+    "p",
+    null,
+    "phone: 233-55-123- 4567"
+  );
+  const emailAdd = createElementWithClass(
+    "p",
+    null,
+    "email: thebeef233@gmail.com"
+  );
+  const socialMedia = createElementWithClass(
+    "a",
+    null,
+    "follow us on instagram"
+  );
 
-  const phoneNumber = document.createElement("p");
-  phoneNumber.textContent = "phone: 233-55-123- 4567";
+  contactdiv.append(contacttitle, phoneNumber, emailAdd, socialMedia);
+  aboutpage.appendChild(contactdiv);
 
-  const emailAdd = document.createElement("p");
-  emailAdd.textContent = "email: thebeef233@gmail.com";
+  const closingtimediv = createElementWithClass("div", "card");
+  const warningtxt = createElementWithClass(
+    "p",
+    null,
+    "The kitchen closes at 10.00 PM Sunday to Thursday and 10:30 PM Friday and Saturday"
+  );
 
-  const socialMedia = document.createElement("p");
-  socialMedia.textContent = "follow us";
-  socialMedia.classList.add("social_links");
-
-  const socialLinks = document.createElement("a");
-  socialLinks.textContent = "instagram";
-
-  const warningtxt = document.createElement("p");
-  warningtxt.textContent =
-    "The kitchen closes at 10.00 PM Sunday to Thursday and 10:30 PM Friday and Saturday";
+  closingtimediv.appendChild(warningtxt);
+  content.appendChild(closingtimediv);
 
   content.appendChild(aboutpage);
-  [
-    // aboutpara,
-    // locationtitle,
-    // contacttitle,
-    emailAdd,
-    phoneNumber,
-    socialMedia,
-    socialLinks,
-    warningtxt,
-  ].forEach((content) => aboutpage.appendChild(content));
 }

@@ -1,5 +1,7 @@
+/* Import font */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
+/* General Styles */
 html {
   box-sizing: border-box;
 }
@@ -9,6 +11,7 @@ body {
   /* background-color: tomato; */
 }
 
+/* Button Styles */
 button {
   width: 120px;
   border: none;
@@ -18,38 +21,33 @@ button {
   font-weight: 400;
   font-size: large;
 }
+
 button:hover,
 button:active {
   text-decoration: underline;
 }
 
+/* Navigation */
 nav {
   text-align: right;
   margin-top: 10px;
 }
 
+/* Header */
 .homeheader {
   font-size: 11rem;
   color: black;
   font-weight: bold;
 }
 
+/* Main Page Layout */
 .mainpagediv {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-@media (max-width: 768px) {
-  .homeheader {
-    font-size: 6rem;
-  }
-
-  button {
-    width: 90px;
-  }
-}
-
+/* Image */
 img.mainpageImg {
   width: 200px;
 }
@@ -58,15 +56,15 @@ img.mainpageImg {
   width: 50px;
   margin-left: 10px;
 }
-/* grid  */
+
+/* Menu Grid */
 .menugrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   /* gap: 10px; */
 }
 
-/* // menu  */
-
+/* Menu Item Styles */
 .foodDescription {
   font-weight: 300;
 }
@@ -78,10 +76,12 @@ img.mainpageImg {
   align-items: center;
   margin-top: 15px;
 }
+
 .food {
   padding: 1em;
   border-bottom: 1px solid rgb(184, 175, 175);
 }
+
 .food:last-child {
   border-bottom: none;
 }
@@ -90,6 +90,7 @@ img.mainpageImg {
   background-color: #f6a05c21;
   cursor: pointer;
 }
+
 .breakfast,
 .main-course {
   border-right: 1px solid rgb(184, 175, 175);
@@ -102,14 +103,38 @@ img.mainpageImg {
   border-bottom: 1px solid rgb(184, 175, 175);
 }
 
+/* About Page */
+.header {
+  font-size: 1.5em;
+  color: #ea8e49;
+}
+
+.about-page {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 10px;
+  margin-top: 100px;
+}
+
+.card {
+  outline: 1px solid #c6c1c19b;
+  text-align: center;
+  margin: 10px;
+  padding: 10px;
+  font-weight: 300;
+}
+
+/* Media Queries */
 @media (max-width: 1024px) {
   nav {
     text-align: center;
   }
+
   .mainpagediv {
     display: flex;
     flex-wrap: wrap;
   }
+
   .homeheader {
     font-size: 8rem;
     text-align: center;
@@ -118,6 +143,7 @@ img.mainpageImg {
   img.mainpageImg {
     width: 151px;
   }
+
   button {
     width: 90px;
   }
@@ -125,5 +151,15 @@ img.mainpageImg {
   .breakfast,
   .main-course {
     border-right: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .homeheader {
+    font-size: 6rem;
+  }
+
+  button {
+    width: 90px;
   }
 }
