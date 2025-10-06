@@ -1,5 +1,7 @@
+/* Import font */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
+/* General Styles */
 html {
   box-sizing: border-box;
 }
@@ -9,6 +11,7 @@ body {
   /* background-color: tomato; */
 }
 
+/* Button Styles */
 button {
   width: 120px;
   border: none;
@@ -18,26 +21,152 @@ button {
   font-weight: 400;
   font-size: large;
 }
+
 button:hover,
 button:active {
   text-decoration: underline;
 }
 
+/* Navigation */
 nav {
   text-align: right;
   margin-top: 10px;
 }
 
+/* Header */
 .homeheader {
   font-size: 11rem;
   color: black;
   font-weight: bold;
 }
 
+/* Main Page Layout */
 .mainpagediv {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/* Image */
+img.mainpageImg {
+  width: 200px;
+}
+
+.fork-imge {
+  width: 50px;
+  margin-left: 10px;
+}
+
+/* Menu Grid */
+.menugrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  /* gap: 10px; */
+}
+
+/* Menu Item Styles */
+.foodDescription {
+  font-weight: 300;
+}
+
+.menu-list {
+  font-size: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.food {
+  padding: 1em;
+  border-bottom: 1px solid rgba(184, 175, 175, 0.678);
+}
+
+.food:last-child {
+  border-bottom: none;
+}
+
+.food:hover {
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+  box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
+  border: 0.5px solid #ccccccc4;
+}
+
+.breakfast,
+.main-course {
+  border-right: 1px solid rgb(184, 175, 175);
+}
+
+.title {
+  font-size: 1.5em;
+  color: #ea8e49;
+  text-align: center;
+  border-bottom: 1px solid rgb(184, 175, 175);
+}
+
+/* About Page */
+.header {
+  font-size: 1.5em;
+  color: #ea8e49;
+}
+
+.about-page {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 10px;
+  margin-top: 100px;
+}
+
+
+.card {
+  display: block;
+  /* top: 0px; */
+  position: relative;
+  padding: 32px 24px;
+  /* margin: 12px; */
+  text-decoration: none;
+  z-index: 0;
+  /* overflow: hidden; */
+  border: 1px solid #e3eef0;
+
+  &:hover {
+    transition: all 0.2s ease-out;
+    box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
+    top: -4px;
+    border: 1px solid #cccccc;
+    background-color: white;
+  }
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+  nav {
+    text-align: center;
+  }
+
+  .mainpagediv {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .homeheader {
+    font-size: 8rem;
+    text-align: center;
+  }
+
+  img.mainpageImg {
+    width: 151px;
+  }
+
+  button {
+    width: 90px;
+  }
+
+  /* .breakfast,
+  .main-course {
+    border-right: none;
+  } */
 }
 
 @media (max-width: 768px) {
@@ -48,75 +177,4 @@ nav {
   button {
     width: 90px;
   }
-
-  .menudiv {
-    /* background-color: red; */
-    text-align: left !important;
-  }
-}
-
-img.mainpageImg {
-  width: 200px;
-}
-
-@media (max-width: 1024px) {
-  nav {
-    text-align: center;
-  }
-  .mainpagediv {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  .homeheader {
-    font-size: 8rem;
-    text-align: center;
-  }
-
-  img.mainpageImg {
-    width: 151px;
-  }
-  button {
-    width: 90px;
-  }
-
-  .food {
-    border-right: 1px solid rgb(57, 57, 57);
-  }
-}
-
-/* menu  */
-p.menu-list {
-  text-align: center;
-  border-bottom: 1px solid #b8b8b8;
-}
-.foodName {
-  font-weight: bold;
-}
-
-.food {
-  border-bottom: 1px solid #8080808f;
-  border-right: 1px solid #8080808f;
-  /* width: 260px; */
-}
-
-.food:hover {
-  cursor: pointer;
-  background-color: rgba(215, 213, 213, 0.28)
-}
-
-span {
-  font-weight: bold;
-}
-.menu-list {
-  font-weight: 300;
-  font-size: 2rem;
-}
-.foodDecription {
-  font-weight: 200;
-}
-.menudiv {
-  text-align: center;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  justify-content: center;
 }
