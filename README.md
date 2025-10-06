@@ -8,4 +8,4 @@ view project [here ](https://kojokwakye.github.io/odin-restaurant/)
 
 ### demo
 
-![demo](/src/img/output.gif)
+![demo](src/img/output.gif)
