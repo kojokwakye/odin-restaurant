@@ -7,5 +7,4 @@ set up your restaurant site to use tabbed browsing to access the Menu and Contac
 view project [here ](https://kojokwakye.github.io/odin-restaurant/)
 
 ### demo
-
-![demo](src/img/output.gif)
+![demo](https://github.com/kojokwakye/odin-restaurant/blob/main/src/img/output.gif?raw=true)
