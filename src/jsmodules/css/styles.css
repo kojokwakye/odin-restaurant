@@ -118,17 +118,14 @@ img.mainpageImg {
   margin-top: 100px;
 }
 
-
 .card {
   display: block;
-  /* top: 0px; */
   position: relative;
   padding: 32px 24px;
-  /* margin: 12px; */
   text-decoration: none;
   z-index: 0;
-  /* overflow: hidden; */
   border: 1px solid #e3eef0;
+  text-align: center;
 
   &:hover {
     transition: all 0.2s ease-out;
@@ -137,6 +134,11 @@ img.mainpageImg {
     border: 1px solid #cccccc;
     background-color: white;
   }
+}
+
+.card > p {
+  font-weight: 300;
+  line-height: 1.5em;
 }
 
 /* Media Queries */
